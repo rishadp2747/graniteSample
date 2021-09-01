@@ -4,6 +4,7 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 
 import { initializeLogger } from "common/logger";
 import Dashboard from "components/Dashboard";
+import CreateTask from "components/Tasks/CreateTask";
 
 //import { setAuthHeaders } from "apis/axios";
 
@@ -18,16 +19,7 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <div>
-              Home <p>Hellllloooo home</p>
-            </div>
-          )}
-        />
-        <Route exact path="/about" render={() => <div>About</div>} />
+        <Route exact path="/tasks/create" component={CreateTask} />
         <Route exact path="/dashboard" component={Dashboard} />
       </Switch>
     </Router>
