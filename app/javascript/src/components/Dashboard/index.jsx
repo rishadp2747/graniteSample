@@ -15,6 +15,7 @@ const Dashboard = () => {
     try {
       const response = await tasksApi.list();
       setTasks(response.data.tasks);
+      logger.info(response.data);
       setLoading(false);
     } catch (error) {
       logger.error(error);
